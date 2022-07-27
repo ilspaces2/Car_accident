@@ -22,4 +22,8 @@ public class AccidentService {
     public Collection<Accident> getAccidents() {
         return store.getAccidents();
     }
+
+    public void addAccident(Accident accident) {
+        store.addAccident(accident);
+    }
 }

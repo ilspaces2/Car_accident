@@ -5,11 +5,13 @@ import ru.job4j.accident.model.Accident;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentMem {
 
     private Map<Integer, Accident> accidents;
+    private AtomicInteger count = new AtomicInteger();
 
     public AccidentMem(Map<Integer, Accident> accidents) {
         this.accidents = accidents;
@@ -23,5 +25,10 @@ public class AccidentMem {
 
     public Collection<Accident> getAccidents() {
         return accidents.values();
+    }
+
+    public void addAccident(Accident accident) {
+        accident.setId(count.incrementAndGet());
+        accidents.put(accident.getId(), accident);
     }
 }

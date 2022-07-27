@@ -34,6 +34,7 @@
             </tbody>
         </table>
     </div>
+    <a class="btn btn-primary" href="<c:url value='/create'/>">Добавить инцидент</a>
 </div>
 </body>
 </html>
