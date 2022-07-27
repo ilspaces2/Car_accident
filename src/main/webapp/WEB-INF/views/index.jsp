@@ -18,13 +18,17 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Имя</th>
+                <th scope="col">Текст</th>
+                <th scope="col">Адресс</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="user" items="${users}" varStatus="Counter">
+            <c:forEach var="accident" items="${accidents}">
                 <tr>
-                    <td>${Counter.count}</td>
-                    <td>${user}</td>
+                    <td>${accident.id}</td>
+                    <td>${accident.name}</td>
+                    <td>${accident.text}</td>
+                    <td>${accident.address}</td>
                 </tr>
             </c:forEach>
             </tbody>
