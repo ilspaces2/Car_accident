@@ -31,4 +31,12 @@ public class AccidentMem {
         accident.setId(count.incrementAndGet());
         accidents.put(accident.getId(), accident);
     }
+
+    public Accident findByIdAccident(int id) {
+        return accidents.get(id);
+    }
+
+    public void update(Accident accident) {
+        accidents.put(accident.getId(), accident);
+    }
 }

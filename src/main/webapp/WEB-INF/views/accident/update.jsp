@@ -14,23 +14,24 @@
 <div class="container" style="width: 50%">
     <div class="card">
         <div class="card-header">
-            Добавить новый инцидент.
+            Обновить инцидент.
         </div>
         <div class="card-body">
-            <form action="<c:url value='/save'/>" method='POST'>
+            <form action="<c:url value='/update'/>" method='POST'>
                 <div class="form-group">
+                    <input type="hidden"  name="id" value="${accident.id}">
                     <label>Имя
-                        <input type="text" class="form-control" name="name" required>
+                        <input type="text" class="form-control" name="name" value="${accident.name}" required>
                     </label>
                 </div>
                 <div class="form-group">
                     <label>Описание
-                        <input type="text" class="form-control" name="text" required>
+                        <input type="text" class="form-control" name="text" value="${accident.text}" required>
                     </label>
                 </div>
                 <div class="form-group">
                     <label>Адрес
-                        <input type="text" class="form-control" name="address" required>
+                        <input type="text" class="form-control" name="address"  value="${accident.address}"required>
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Сохранить</button>

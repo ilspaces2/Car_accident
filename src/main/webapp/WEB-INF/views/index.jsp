@@ -19,7 +19,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Имя</th>
                 <th scope="col">Текст</th>
-                <th scope="col">Адресс</th>
+                <th scope="col">Адрес</th>
+                <th scope="col">Обновить</th>
             </tr>
             </thead>
             <tbody>
@@ -29,6 +30,9 @@
                     <td>${accident.name}</td>
                     <td>${accident.text}</td>
                     <td>${accident.address}</td>
+                    <td>
+                        <a href="<c:url value='/formUpdate?id=${accident.id}'/>">Обновить</a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
