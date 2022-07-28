@@ -21,6 +21,7 @@
                 <th scope="col">Текст</th>
                 <th scope="col">Адрес</th>
                 <th scope="col">Тип</th>
+                <th scope="col">Статья</th>
                 <th scope="col">Обновить</th>
             </tr>
             </thead>
@@ -32,6 +33,11 @@
                     <td>${accident.text}</td>
                     <td>${accident.address}</td>
                     <td>${accident.accidentType.name}</td>
+                    <td>
+                        <c:forEach var="rule" items="${accident.rules}">
+                            <p>${rule.name}</p>
+                        </c:forEach>
+                    </td>
                     <td>
                         <a href="<c:url value='/formUpdate?id=${accident.id}'/>">Обновить</a>
                     </td>

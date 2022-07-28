@@ -21,6 +21,9 @@
                 <div class="form-group">
                     <input type="hidden" name="id" value="${accident.id}">
                     <input type="hidden" name="accidentType.id" value="${accident.accidentType.id}">
+                    <c:forEach var="rule" items="${accident.rules}">
+                        <input type="hidden" name="rIds" value="${rule.id}">
+                    </c:forEach>
                     <label>Имя
                         <input type="text" class="form-control" name="name" value="${accident.name}" required>
                     </label>

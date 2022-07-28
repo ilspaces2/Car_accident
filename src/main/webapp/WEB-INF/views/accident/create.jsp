@@ -42,6 +42,15 @@
                         </select>
                     </label>
                 </div>
+                <div class="form-group">
+                    <label>Статья
+                        <select name="rIds" multiple>
+                            <c:forEach var="rule" items="${rules}" >
+                                <option value="${rule.id}">${rule.name}</option>
+                            </c:forEach>
+                        </select>
+                    </label>
+                </div>
                 <button type="submit" class="btn btn-primary">Сохранить</button>
                 <a class="btn btn-primary" href="<c:url value='/'/>">Назад</a>
             </form>
