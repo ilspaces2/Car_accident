@@ -19,7 +19,8 @@
         <div class="card-body">
             <form action="<c:url value='/update'/>" method='POST'>
                 <div class="form-group">
-                    <input type="hidden"  name="id" value="${accident.id}">
+                    <input type="hidden" name="id" value="${accident.id}">
+                    <input type="hidden" name="accidentType.id" value="${accident.accidentType.id}">
                     <label>Имя
                         <input type="text" class="form-control" name="name" value="${accident.name}" required>
                     </label>
@@ -31,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label>Адрес
-                        <input type="text" class="form-control" name="address"  value="${accident.address}"required>
+                        <input type="text" class="form-control" name="address" value="${accident.address}" required>
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Сохранить</button>

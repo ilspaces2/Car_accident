@@ -33,6 +33,15 @@
                         <input type="text" class="form-control" name="address" required>
                     </label>
                 </div>
+                <div class="form-group">
+                    <label>Категория
+                        <select name="accidentType.id">
+                            <c:forEach var="type" items="${types}">
+                                <option value="${type.id}">${type.name}</option>
+                            </c:forEach>
+                        </select>
+                    </label>
+                </div>
                 <button type="submit" class="btn btn-primary">Сохранить</button>
                 <a class="btn btn-primary" href="<c:url value='/'/>">Назад</a>
             </form>
