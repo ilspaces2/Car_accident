@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.AccidentType;
 import ru.job4j.accident.repository.AccidentTypeMem;
 
-import java.util.List;
+import java.util.Collection;
 
 @Repository
 public class AccidentTypeService {
@@ -15,7 +15,7 @@ public class AccidentTypeService {
         this.store = store;
     }
 
-    public List<AccidentType> getTypes() {
+    public Collection<AccidentType> getTypes() {
         return store.getTypes();
     }
 

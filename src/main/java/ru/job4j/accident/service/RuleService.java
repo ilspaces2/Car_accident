@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.Rule;
 import ru.job4j.accident.repository.RuleMem;
 
-import java.util.List;
+import java.util.Collection;
 
 @Repository
 public class RuleService {
@@ -15,7 +15,7 @@ public class RuleService {
         this.store = store;
     }
 
-    public List<Rule> getRules() {
+    public Collection<Rule> getRules() {
         return store.getRules();
     }
 

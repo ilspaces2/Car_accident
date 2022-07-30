@@ -2,25 +2,25 @@ package ru.job4j.accident.repository;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.Accident;
+import ru.job4j.accident.model.AccidentType;
+import ru.job4j.accident.model.Rule;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AccidentMem {
 
-    private Map<Integer, Accident> accidents;
+    private Map<Integer, Accident> accidents = new HashMap<>();
     private AtomicInteger count = new AtomicInteger();
 
-    public AccidentMem(Map<Integer, Accident> accidents) {
-        this.accidents = accidents;
-    }
-
-    public void addAccidents() {
-        accidents.put(1, new Accident(1, "Ivan", "Accident one", "Moscow"));
-        accidents.put(2, new Accident(2, "Boris", "Accident two", "Kazan"));
-        accidents.put(3, new Accident(3, "Anna", "Accident three", "Orel"));
+    public AccidentMem() {
+        Accident one = new Accident(1, "Ivan", "Accident one", "Moscow");
+        one.setAccidentType(new AccidentType(1, "Две машины"));
+        one.addRule(new Rule(1, "Статья 1"));
+        accidents.put(count.incrementAndGet(), one);
     }
 
     public Collection<Accident> getAccidents() {
@@ -37,6 +37,6 @@ public class AccidentMem {
     }
 
     public void update(Accident accident) {
-        accidents.put(accident.getId(), accident);
+        accidents.replace(accident.getId(), accident);
     }
 }

@@ -15,10 +15,6 @@ public class AccidentService {
         this.store = store;
     }
 
-    public void addAccidents() {
-        store.addAccidents();
-    }
-
     public Collection<Accident> getAccidents() {
         return store.getAccidents();
     }

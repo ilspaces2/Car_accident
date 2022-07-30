@@ -3,26 +3,26 @@ package ru.job4j.accident.repository;
 import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.Rule;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 @Repository
 public class RuleMem {
 
-    private List<Rule> rules;
+    private Map<Integer, Rule> rules = new HashMap();
 
     public RuleMem() {
-        rules = new ArrayList<>();
-        rules.add(new Rule(1, "Статья 1"));
-        rules.add(new Rule(2, "Статья 2"));
-        rules.add(new Rule(3, "Статья 3"));
+        rules.put(1, new Rule(1, "Статья 1"));
+        rules.put(2, new Rule(2, "Статья 2"));
+        rules.put(3, new Rule(3, "Статья 3"));
     }
 
-    public List<Rule> getRules() {
-        return List.copyOf(rules);
+    public Collection<Rule> getRules() {
+        return rules.values();
     }
 
     public Rule findByIdRule(int id) {
-        return rules.get(id - 1);
+        return rules.get(id);
     }
 }
