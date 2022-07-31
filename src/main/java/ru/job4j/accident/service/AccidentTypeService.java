@@ -2,16 +2,16 @@ package ru.job4j.accident.service;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.AccidentType;
-import ru.job4j.accident.repository.AccidentTypeJdbcTemplate;
+import ru.job4j.accident.repository.AccidentTypeHibernate;
 
 import java.util.Collection;
 
 @Repository
 public class AccidentTypeService {
 
-    private AccidentTypeJdbcTemplate store;
+    private AccidentTypeHibernate store;
 
-    public AccidentTypeService(AccidentTypeJdbcTemplate store) {
+    public AccidentTypeService(AccidentTypeHibernate store) {
         this.store = store;
     }
 

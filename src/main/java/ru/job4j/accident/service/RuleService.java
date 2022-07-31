@@ -2,16 +2,16 @@ package ru.job4j.accident.service;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.RuleJdbcTemplate;
+import ru.job4j.accident.repository.RuleHibernate;
 
 import java.util.Collection;
 
 @Repository
 public class RuleService {
 
-    private RuleJdbcTemplate store;
+    private RuleHibernate store;
 
-    public RuleService(RuleJdbcTemplate store) {
+    public RuleService(RuleHibernate store) {
         this.store = store;
     }
 
