@@ -1,12 +1,13 @@
 package ru.job4j.accident.repository;
 
 import org.hibernate.SessionFactory;
-import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.AccidentType;
 
 import java.util.Collection;
 
+/*
 @Repository
+ */
 public class AccidentTypeHibernate implements Store {
 
     private final SessionFactory sf;

@@ -1,12 +1,13 @@
 package ru.job4j.accident.repository;
 
 import org.hibernate.SessionFactory;
-import org.springframework.stereotype.Repository;
 import ru.job4j.accident.model.Rule;
 
 import java.util.Collection;
 
+/*
 @Repository
+ */
 public class RuleHibernate implements Store {
 
     private final SessionFactory sf;
