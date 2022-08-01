@@ -46,6 +46,9 @@
             </tbody>
         </table>
     </div>
+    <div>
+        Login as : ${user.username}
+    </div>
     <a class="btn btn-primary" href="<c:url value='/create'/>">Добавить инцидент</a>
     <a class="btn btn-primary" href="<c:url value='/logout'/>">Выход</a>
 </div>
