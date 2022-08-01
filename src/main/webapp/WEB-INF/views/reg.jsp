@@ -12,15 +12,9 @@
 </head>
 <body>
 <div class="container pt-3" style="width: 30%">
-    <a href="<c:url value='/reg'/>">Регистрация</a>
     <div class="card">
-        <c:if test="${not empty errorMessage}">
-            <div style="color:red; font-weight: bold; margin: 30px 0px;">
-                    ${errorMessage}
-            </div>
-        </c:if>
         <div class="card-body">
-            <form name='login' action="<c:url value='/login'/>" method='POST'>
+            <form name='login' action="<c:url value='/reg'/>" method='POST'>
                 <div class="form-group">
                     <label>UserName:
                         <input type='text' name='username'>
