@@ -47,6 +47,7 @@
         </table>
     </div>
     <a class="btn btn-primary" href="<c:url value='/create'/>">Добавить инцидент</a>
+    <a class="btn btn-primary" href="<c:url value='/logout'/>">Выход</a>
 </div>
 </body>
 </html>
