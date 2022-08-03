@@ -3,14 +3,14 @@ package ru.job4j.accident.control;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import ru.job4j.accident.exception.UsernameAlreadyExistsException;
 import ru.job4j.accident.model.User;
 import ru.job4j.accident.service.AuthorityService;
 import ru.job4j.accident.service.UserService;
-
-import java.util.Optional;
 
 @Controller
 public class RegControl {
@@ -26,12 +26,7 @@ public class RegControl {
     }
 
     @PostMapping("/reg")
-    public String regSave(@ModelAttribute User user, Model model) {
-        Optional<User> optionalUser = users.findByUsername(user.getUsername());
-        if (optionalUser.isPresent()) {
-            model.addAttribute("message", "Username already exists");
-            return "reg";
-        }
+    public String regSave(@ModelAttribute User user) {
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
         user.setAuthority(authorities.findByAuthority("ROLE_USER"));
@@ -41,6 +36,12 @@ public class RegControl {
 
     @GetMapping("/reg")
     public String regPage() {
+        return "reg";
+    }
+
+    @ExceptionHandler(UsernameAlreadyExistsException.class)
+    public String handleException(UsernameAlreadyExistsException e, Model model) {
+        model.addAttribute("message", e.getMessage());
         return "reg";
     }
 }
