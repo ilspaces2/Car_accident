@@ -1,16 +1,17 @@
-package ru.job4j.accident.repository;
+package ru.job4j.accident.repository.data.crud;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import ru.job4j.accident.model.Accident;
 
 import java.util.Collection;
+import java.util.Optional;
 
-public interface AccidentData extends CrudRepository<Accident, Integer> {
+public interface CrudAccidentData extends CrudRepository<Accident, Integer> {
 
     @Query("select distinct a from Accident a join fetch a.accidentType join fetch a.rules")
     Collection<Accident> findAll();
 
     @Query("from Accident a join fetch a.accidentType join fetch a.rules where a.id= ?1")
-    Accident findById(int id);
+    Optional<Accident> findById(int id);
 }

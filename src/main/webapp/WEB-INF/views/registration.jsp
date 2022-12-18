@@ -19,7 +19,7 @@
             </div>
         </c:if>
         <div class="card-body">
-            <form name='login' action="<c:url value='/reg'/>" method='POST'>
+            <form name='login' action="<c:url value='/registration'/>" method='POST'>
                 <div class="form-group">
                     <label>UserName:
                         <input type='text' name='username'>
@@ -30,7 +30,7 @@
                         <input type='password' name='password'/>
                     </label>
                 </div>
-                <input name="submit" type="submit" value="submit"/>
+                <button name="submit" type="submit" value="submit">Done</button>
             </form>
         </div>
     </div>

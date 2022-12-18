@@ -1,4 +1,4 @@
-package ru.job4j.accident.repository;
+package ru.job4j.accident.repository.jpa;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

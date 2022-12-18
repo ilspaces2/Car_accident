@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container pt-3" style="width: 30%">
-    <a href="<c:url value='/reg'/>">Регистрация</a>
+    <a href="<c:url value='/registration'/>">Регистрация</a>
     <div class="card">
         <c:if test="${not empty errorMessage}">
             <div style="color:red; font-weight: bold; margin: 30px 0px;">
@@ -31,7 +31,7 @@
                         <input type='password' name='password'/>
                     </label>
                 </div>
-                <input name="submit" type="submit" value="submit"/>
+                <button name="submit" type="submit" value="submit">Enter</button>
             </form>
         </div>
     </div>

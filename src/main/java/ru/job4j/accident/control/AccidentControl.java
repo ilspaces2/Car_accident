@@ -17,9 +17,9 @@ import java.util.Arrays;
 @Controller
 public class AccidentControl {
 
-    private AccidentService accidentService;
-    private AccidentTypeService accidentTypeService;
-    private RuleService ruleService;
+    private final AccidentService accidentService;
+    private final AccidentTypeService accidentTypeService;
+    private final RuleService ruleService;
 
     public AccidentControl(AccidentService accidentService, AccidentTypeService accidentTypeService, RuleService ruleService) {
         this.accidentService = accidentService;

@@ -1,7 +1,12 @@
 package ru.job4j.accident.repository;
 
-import org.springframework.data.repository.CrudRepository;
 import ru.job4j.accident.model.User;
 
-public interface UserRepository extends CrudRepository<User, Integer> {
+import java.util.Optional;
+
+public interface UserRepository {
+
+    Optional<User> findUserByUsername(String username);
+
+    void save(User user);
 }

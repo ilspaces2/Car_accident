@@ -1,25 +1,25 @@
 package ru.job4j.accident.service;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import ru.job4j.accident.model.AccidentType;
-import ru.job4j.accident.repository.AccidentTypeData;
+import ru.job4j.accident.repository.AccidentTypeRepository;
 
 import java.util.Collection;
 
-@Repository
+@Service
 public class AccidentTypeService {
 
-    private AccidentTypeData store;
+    private final AccidentTypeRepository store;
 
-    public AccidentTypeService(AccidentTypeData store) {
+    public AccidentTypeService(AccidentTypeRepository store) {
         this.store = store;
     }
 
     public Collection<AccidentType> getTypes() {
-        return (Collection<AccidentType>) store.findAll();
+        return store.findAll();
     }
 
     public AccidentType findByIdType(int id) {
-        return store.findById(id).get();
+        return store.findById(id).orElseThrow();
     }
 }

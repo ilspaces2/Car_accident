@@ -1,25 +1,25 @@
 package ru.job4j.accident.service;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.RuleData;
+import ru.job4j.accident.repository.RuleRepository;
 
 import java.util.Collection;
 
-@Repository
+@Service
 public class RuleService {
 
-    private RuleData store;
+    private final RuleRepository store;
 
-    public RuleService(RuleData store) {
+    public RuleService(RuleRepository store) {
         this.store = store;
     }
 
     public Collection<Rule> getRules() {
-        return (Collection<Rule>) store.findAll();
+        return store.findAll();
     }
 
     public Rule findByIdRule(int id) {
-        return store.findById(id).get();
+        return store.findByIdRule(id).orElseThrow();
     }
 }
